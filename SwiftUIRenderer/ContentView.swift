@@ -14,7 +14,7 @@ struct ContentView : View {
         HStack {
             TextField($string)
                 .lineLimit(nil)
-            AttributedText(formatted: $string)
+            AttributedText(formatted: string)
         }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
     }

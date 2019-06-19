@@ -278,6 +278,12 @@ extension Tag {
                 }
                 let style = AttributedStringStyle(italic: true)
                 return .font(style: style, child: content)
+            case "u":
+                guard let content = content else {
+                    return nil
+                }
+                let style = AttributedStringStyle(underline: true)
+                return .font(style: style, child: content)
             case "br":
                 return .newline
             case "font":
@@ -371,7 +377,7 @@ extension Tag {
 }
 
 struct AttributedText : View {
-    @Binding var formatted: String
+    var formatted: String
     var renderedTag: some View {
         let result = Tag.parse(from: formatted).render()
         return result
@@ -386,7 +392,7 @@ struct AttributedText : View {
 #if DEBUG
 struct AttributedText_Previews : PreviewProvider {
     static var previews: some View {
-        AttributedText(formatted: .constant("test"))
+        AttributedText(formatted: "test")
     }
 }
 #endif

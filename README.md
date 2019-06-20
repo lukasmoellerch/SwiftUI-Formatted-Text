@@ -1,5 +1,5 @@
 # SwiftUI-Formatted-Text
-A simple proof-of-concept SwiftUI application that renders an HTML-like language using SwiftUI Text elements.
+A simple proof-of-concept SwiftUI application that renders a HTML-like language using SwiftUI Text elements.
 
 ## Description
 Goal of this project is to test the described proof-of-concept. In the moment both the parser and the renderer are fairly

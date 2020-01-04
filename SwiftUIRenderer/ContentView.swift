@@ -12,7 +12,7 @@ struct ContentView : View {
     @State var string: String = "Type some text here..."
     var body: some View {
         HStack {
-            TextField($string)
+            TextField("TEXT", text: $string)
                 .lineLimit(nil)
             AttributedText(formatted: string)
         }

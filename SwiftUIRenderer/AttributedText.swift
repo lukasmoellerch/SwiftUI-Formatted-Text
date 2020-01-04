@@ -83,7 +83,7 @@ indirect enum Tag {
                 node = node.fontWeight(fontWeight)
             }
             if let color = style.color {
-                node = node.color(color)
+                node = node.foregroundColor(color)
             }
             return node
         case .newline:
@@ -330,7 +330,7 @@ extension Tag {
                 if let family = attributes["family"],
                     let sizeString = attributes["size"],
                     let size = NumberFormatter().number(from: sizeString)?.floatValue {
-                    font = Font.custom(family, size: Length(size))
+                    font = Font.custom(family, size: CGFloat(size))
                 }
                 let style = AttributedStringStyle(font: font, color: color)
                 return .font(style: style, child: content)
